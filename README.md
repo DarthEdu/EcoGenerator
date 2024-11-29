@@ -37,8 +37,6 @@
 
 This project proposes a solution so that the user can visualize and have knowledge about light generators.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -65,8 +63,6 @@ Below you can see the tools that were used in this project.
 
 * ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
@@ -80,8 +76,6 @@ _Below is an example of how you can instruct your audience on installing and set
    npm i
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 ## Contact
 
@@ -90,5 +84,3 @@ _Below is an example of how you can instruct your audience on installing and set
 * Jose Bernal - [@GitHub](https://github.com/JoseBernal06)
 * Dennis Diaz - [@GitHub](https://github.com/DonRuffo)
 * Mateo Tacuri
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
