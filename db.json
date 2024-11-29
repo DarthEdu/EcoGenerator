@@ -3,7 +3,8 @@
         {
             "id": "1",
             "nombre": "Eduardo Porras",
-            "Nombre de usuario": "admin"
+            "Nombre de usuario": "admin",
+            "password" : "jj012"
         }
     ],
 
