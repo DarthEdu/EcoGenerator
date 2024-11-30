@@ -21,6 +21,14 @@
         "telefono": "0987654322",
         "email": "juan.perez@gmail.com"
       }
+    },
+    {
+      "id": "3",
+      "nombre": "Ramiro Torres",
+      "contacto": {
+        "telefono": "0998355261",
+        "email": "ramiro.torres@gmail.com"
+      }
     }
   ],
   "generador": [

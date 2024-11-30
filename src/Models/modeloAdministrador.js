@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import { response } from 'express';
 
 const Admin = {
     async RegistrarAdmin(datos) {
@@ -47,6 +48,40 @@ const Admin = {
             } else {
                 return false
             }
+        }
+    },
+    async ListarClientes(){
+        const datos = await fetch("http://localhost:4000/usuario")
+        const respuesta = await datos.json()
+        console.log(respuesta)
+        if(!respuesta){
+            return {"msg":"No existen datos"}
+        }else{
+            return respuesta
+        }
+    },
+    async ActualizarClientes(id, nuevaInfo){
+        const datos = await fetch(`http://localhost:4000/usuario/${id}`, {
+            method:'PUT',
+            body: JSON.stringify(nuevaInfo),
+            headers:{ 'Content-Type': 'application/json' }
+        })
+        const respuesta = await datos.json()
+        if(!respuesta){
+            return {"msg": "El usuario no existe"}
+        }else{
+            return respuesta
+        }
+    },
+    async EliminarClientes(id){
+        const datos = await fetch(`http://localhost:4000/usuario/${id}`,{
+            method: 'DELETE',
+        })
+        const respuesta = await datos.json()
+        if(!respuesta){
+            return {"msg":"El usuario no existe"}
+        }else{
+            return respuesta
         }
     }
 }

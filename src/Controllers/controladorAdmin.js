@@ -1,6 +1,7 @@
 import Admin from "../Models/modeloAdministrador.js";
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
+import { json } from "express";
 
 const ControladorCrearAdmin = async (req, res) => {
     const { nombre, contrasenia } = req.body
@@ -48,5 +49,41 @@ const ControladorLoginAdmin = async (req, res) => {
     }
 }
 
+const ControladorObtenerClientes = async (req, res) => {
+    try{
+        const usuarios = await Admin.ListarClientes()
+        res.status(200).json(usuarios)
+    }catch(error){
+        res.status(500).json({"msg":"ERROR de conexión"})
+    }
+}
 
-export { ControladorCrearAdmin, ControladorLoginAdmin }
+const ControladorActualizarClientes = async (req, res) =>{
+    const {id} = req.params
+    const nuevosDatos = {
+        "id":id,
+        ...req.body
+    }
+    try{
+        const actualizacion = await Admin.ActualizarClientes(id,nuevosDatos)
+        res.status(200).json(actualizacion)
+    }catch(error){
+        res.status(500).json({"msg":"ERROR de conexión"})
+    }
+}
+
+const ControladorEliminarClientes = async (req, res) =>{
+    const {id} = req.params
+    try{
+        Admin.EliminarClientes(id)
+        res.status(200).json({"msg":"Eliminado correctamente"})
+    }catch(error){
+        res.status(500).json({"msg":"ERROR de conexión"})
+    }
+}
+
+export { ControladorCrearAdmin,
+        ControladorLoginAdmin,
+        ControladorObtenerClientes,
+        ControladorActualizarClientes,
+        ControladorEliminarClientes}
