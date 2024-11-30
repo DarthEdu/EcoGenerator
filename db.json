@@ -1,33 +1,37 @@
 {
-    "administrador": [
-        {
-            "id": "1",
-            "nombre": "Eduardo Porras",
-            "Nombre de usuario": "admin",
-            "password" : "jj012"
-        }
-    ],
-
-    "usuario": [
-      {
-        "id": "1",
-        "nombre": "Juan Pérez Lazo",
-        "contacto": {
-          "telefono": "0987654322",
-          "email": "juan.perez@gmail.com"
-        }
+  "administrador": [
+    {
+      "id": "1",
+      "nombre": "Eduardo Porras",
+      "nombre de usuario": "admin",
+      "contrasenia": "jj012"
+    },
+    {
+      "id": "d6b59097-23f5-429f-a945-8aae4e71d806",
+      "nombre": "Dennis Díaz",
+      "nombre de usuario": "admin",
+      "contrasenia": "$2b$10$6vRZ2jGmzp27gC482fXMJuYiAMyANdRgwzAdRMUBBfBHXqsiAEfV2"
+    }
+  ],
+  "usuario": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez Lazo",
+      "contacto": {
+        "telefono": "0987654322",
+        "email": "juan.perez@gmail.com"
       }
-
-    ],
-    "generador": [
-      {
-        "modelo": "Generac GP8000E",
-        "potencia": "10 kW",
-        "tipoCombustible": "Diésel",
-        "precioDia": 150,
-        "precioVenta": 15000,
-        "ubicacion": "Bodega Guayaquil",
-        "id": "1"
-      }
-    ]
-  }
+    }
+  ],
+  "generador": [
+    {
+      "modelo": "Generac GP8000E",
+      "potencia": "10 kW",
+      "tipoCombustible": "Diésel",
+      "precioDia": 150,
+      "precioVenta": 15000,
+      "ubicacion": "Bodega Guayaquil",
+      "id": "1"
+    }
+  ]
+}
