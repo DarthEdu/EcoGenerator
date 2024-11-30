@@ -4,13 +4,15 @@ import { ControladorCrearAdmin,
          ControladorActualizarClientes,
          ControladorEliminarClientes } from "../Controllers/controladorAdmin.js";
 import { Router } from "express";
-
+import { VerifyToken } from "../Middleware/auth.js";
 const route = Router()
 
+//publicas
 route.post('/administrador/registro', ControladorCrearAdmin)
 route.post('/administrador/login', ControladorLoginAdmin)
-route.get('/administrador/clientes', ControladorObtenerClientes)
-route.put('/administrador/clientes/:id', ControladorActualizarClientes)
-route.delete('/administrador/clientes/:id', ControladorEliminarClientes)
 
+//privadas
+route.get('/administrador/clientes',VerifyToken ,ControladorObtenerClientes)
+route.put('/administrador/clientes/:id', VerifyToken,ControladorActualizarClientes)
+route.delete('/administrador/clientes/:id',VerifyToken ,ControladorEliminarClientes)
 export default route

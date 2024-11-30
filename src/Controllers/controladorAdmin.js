@@ -2,7 +2,7 @@ import Admin from "../Models/modeloAdministrador.js";
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import { json } from "express";
-
+import { createToken } from "../Middleware/auth.js";
 const ControladorCrearAdmin = async (req, res) => {
     const { nombre, contrasenia } = req.body
     try {
@@ -36,16 +36,19 @@ const ControladorLoginAdmin = async (req, res) => {
     const { nombre, contrasenia } = req.body
     try {
         const autenticar = await Admin.LoginAdmin(nombre, contrasenia)
-        console.log(autenticar)
+        const token = createToken(autenticar)
+        const mostrar = {
+            autenticar,
+            token
+        }
         if (!autenticar) {
             res.send("Credenciales no ingresadas").status(404)
             console.log("Ingresar credenciales")
         } else {
-            res.status(200).json(autenticar)
+            res.status(200).json(mostrar)
         }
     } catch (error) {
         res.status(500).json({ "msg": "ERROR de conexión" })
-        console.log("NO CONECTA")
     }
 }
 

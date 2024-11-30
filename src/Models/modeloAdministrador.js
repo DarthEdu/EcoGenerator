@@ -27,7 +27,6 @@ const Admin = {
                 return { "msg": "Usuario no encontrado" }
             }
             const contra = await bcrypt.compare(password, user.contrasenia)
-            console.log(contra)
             if (user && contra) {
                 console.log("Autenticación exitosa")
                 return user
