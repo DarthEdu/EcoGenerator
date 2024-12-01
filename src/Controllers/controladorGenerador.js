@@ -1,6 +1,9 @@
 
 import ModeloGenerador from "../Models/modeloGenerador.js";
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs-extra'
+import { v2 as cloudinary } from 'cloudinary'
+
 
 
 
@@ -26,7 +29,12 @@ const createGeneradorController = async (req,res) => {
         ...req.body
     }
     try {
+        const cloudinaryResponse = await cloudinary.uploader.upload(req.files.imagen.tempFilePath,{folder:'generador'})
+        console.log(cloudinaryResponse)
+        newGeneradorData.imagen = cloudinaryResponse.secure_url
+        newGeneradorData.public_id= cloudinaryResponse.public_id
         const generador = await ModeloGenerador.createGeneradorModel(newGeneradorData)
+        await fs.unlink(req.files.imagen.tempFilePath)
         res.status(201).json(generador)
     } catch (error) {
         res.status(500).json(error)
