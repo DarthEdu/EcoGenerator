@@ -11,6 +11,12 @@
       "nombre": "Dennis Díaz",
       "nombre de usuario": "admin",
       "contrasenia": "$2b$10$6vRZ2jGmzp27gC482fXMJuYiAMyANdRgwzAdRMUBBfBHXqsiAEfV2"
+    },
+    {
+      "id": "c38b2f73-0fe5-4df4-890d-cefc90e07427",
+      "nombre": "Mateo Bernal",
+      "nombre de usuario": "admin",
+      "contrasenia": "$2b$10$jpSAtDWayRIkcbHCZd6x5usQHI4l2Aiu4x7suFZ.LsAMDBp6tbyb2"
     }
   ],
   "usuario": [
@@ -33,13 +39,37 @@
   ],
   "generador": [
     {
-      "modelo": "Generac GP8000E",
-      "potencia": "10 kW",
+      "id": "4b50b51e-d779-47d3-861b-24979b53e5c0",
+      "modelo": "Honda EU2200i",
+      "potencia": "2.2 kW",
+      "tipoCombustible": "Gasolina",
+      "precioDia": "80",
+      "precioVenta": "10000",
+      "ubicacion": "Bodega Quito",
+      "imagen": "https://res.cloudinary.com/dxdqrit5y/image/upload/v1733021316/generador/o2cuhjyp5tedhumsyuwz.jpg",
+      "public_id": "generador/o2cuhjyp5tedhumsyuwz"
+    },
+    {
+      "id": "43c7d54e-a6a2-4e6e-9a49-b5c823202d77",
+      "modelo": "CAT RP12000E",
+      "potencia": "12 kW",
       "tipoCombustible": "Diésel",
-      "precioDia": 150,
-      "precioVenta": 15000,
+      "precioDia": "200",
+      "precioVenta": "18000",
+      "ubicacion": "Bodega Cuenca",
+      "imagen": "https://res.cloudinary.com/dxdqrit5y/image/upload/v1733021427/generador/tgbvitaec1oqyrilirni.jpg",
+      "public_id": "generador/tgbvitaec1oqyrilirni"
+    },
+    {
+      "id": "a1d65e2e-4beb-4d14-81c6-6e5c2a7bbe4c",
+      "modelo": "Cummins Onan P4500i",
+      "potencia": "4.5 kW",
+      "tipoCombustible": "Gas LP",
+      "precioDia": "100",
+      "precioVenta": "12000",
       "ubicacion": "Bodega Guayaquil",
-      "id": "1"
+      "imagen": "https://res.cloudinary.com/dxdqrit5y/image/upload/v1733021533/generador/io9ucsbfzldsat8is8sc.jpg",
+      "public_id": "generador/io9ucsbfzldsat8is8sc"
     }
   ]
 }
