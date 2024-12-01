@@ -74,12 +74,6 @@
   ],
   "clientes": [
     {
-      "id": "1",
-      "nombre": "Martin",
-      "correo": "martin.ayala@epn.edu.ec",
-      "contrasenia": "Hola123"
-    },
-    {
       "id": "3a96b087-bfdb-4db9-a88a-8926b0120c60",
       "nombre": "Bugs Bunny",
       "correo": "bugs.bunny@xd.com",

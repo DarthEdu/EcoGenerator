@@ -43,7 +43,7 @@ app.use('/ecoGenerator', routeAdmin)
 // ruta generador
 app.use('/ecoGenerator', routeGenerador)
 
-// ruta cliente
+//Ruta Cliente
 app.use('/ecoGenerator',routerCliente)
 
 // Exportar la instancia de express por medio de app

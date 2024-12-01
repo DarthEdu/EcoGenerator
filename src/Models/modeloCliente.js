@@ -52,9 +52,9 @@ const modeloClientes = {
         const respuesta = await datos.json()
         console.log(respuesta)
         if(respuesta){
-            return respuesta
+            return respuesta // La respuesta da en terminas 
         }else{
-            return {"msg":"No existen Generadores"}
+            return {"msg":"No existen Generadores"} 
         }
     }
 
