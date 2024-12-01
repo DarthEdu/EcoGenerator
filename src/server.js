@@ -1,7 +1,8 @@
 // Requerir los módulos
 import express from 'express'
 import morgan from 'morgan'
-import route from './Routers/routerAdmin.js'
+import routeAdmin from './Routers/routerAdmin.js'
+import routeGenerador from './Routers/routerGenerador.js'
 
 // Inicializaciones
 const app = express()
@@ -21,7 +22,10 @@ app.get('/',(req,res)=>{
     res.send("Server on")
 })
 
-app.use('/ecoGenerator/', route)
+app.use('/ecoGenerator', routeAdmin)
+
+// ruta generador
+app.use('/ecoGenerator', routeGenerador)
 
 // Exportar la instancia de express por medio de app
 export default  app
