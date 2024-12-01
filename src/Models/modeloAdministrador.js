@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { response } from 'express';
 
 const Admin = {
     async RegistrarAdmin(datos) {
@@ -35,24 +34,26 @@ const Admin = {
             }
         }
     },
-    async VerificarAdmin(nombre) {
-        if (!nombre || typeof nombre !== "string") {
-            return { "msg": "Ingresa el nombre correctamente" }
+    async VerificarAdmin(nom_Usuario, correo) {
+        if (!correo || typeof correo !== "string" || !nom_Usuario || typeof nom_Usuario!=="string") {
+            return { "msg": "Ingresa los datos correctamente" }
         } else {
             const conec = await fetch("http://localhost:4000/administrador")
             const respuesta = await conec.json()
-            const verificacion = respuesta.find(nom => nom.nombre === nombre)
+            const verificacion = respuesta.find(mail => mail.correo === correo)
+            const verificacionUsername= respuesta.find(nom => nom.nombre_de_usuario === nom_Usuario)
             if (verificacion) {
                 return { "msg": "El administrador ya existe" }
-            } else {
+            } else if (verificacionUsername){
+                return { "msg": "El nombre de usuario ya esta en uso" }
+            }else {
                 return false
             }
         }
     },
     async ListarClientes(){
-        const datos = await fetch("http://localhost:4000/usuario")
+        const datos = await fetch("http://localhost:4000/clientes")
         const respuesta = await datos.json()
-        console.log(respuesta)
         if(!respuesta){
             return {"msg":"No existen datos"}
         }else{
@@ -60,9 +61,27 @@ const Admin = {
         }
     },
     async ActualizarClientes(id, nuevaInfo){
-        const datos = await fetch(`http://localhost:4000/usuario/${id}`, {
+        const url = "http://localhost:4000/clientes"
+        const conec=await fetch(url)
+        const resultado = await conec.json()
+        if(!resultado){
+            return {"msg":"No se encuentra la base"}
+        }
+        const usuarioActual = resultado.find(ident => ident.id === id)
+        if(!usuarioActual){
+            return {"msg":"El usuario no existe"}
+        }
+        
+        const contraFinal = nuevaInfo.contrasenia ? nuevaInfo.contrasenia : usuarioActual.contrasenia
+        const usuarioFinal = {
+            ...usuarioActual,
+            ...nuevaInfo,
+            contrasenia: contraFinal
+        }
+
+        const datos = await fetch(`http://localhost:4000/clientes/${id}`, {
             method:'PUT',
-            body: JSON.stringify(nuevaInfo),
+            body: JSON.stringify(usuarioFinal),
             headers:{ 'Content-Type': 'application/json' }
         })
         const respuesta = await datos.json()
@@ -73,7 +92,7 @@ const Admin = {
         }
     },
     async EliminarClientes(id){
-        const datos = await fetch(`http://localhost:4000/usuario/${id}`,{
+        const datos = await fetch(`http://localhost:4000/clientes/${id}`,{
             method: 'DELETE',
         })
         const respuesta = await datos.json()

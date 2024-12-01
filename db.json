@@ -3,38 +3,30 @@
     {
       "id": "1",
       "nombre": "Eduardo Porras",
-      "nombre de usuario": "admin",
+      "nombre_de_usuario": "admin",
+      "correo": "eduardo.porras@epn.edu.ec",
       "contrasenia": "jj012"
     },
     {
       "id": "d6b59097-23f5-429f-a945-8aae4e71d806",
       "nombre": "Dennis Díaz",
-      "nombre de usuario": "admin",
+      "nombre_de_usuario": "admin",
+      "correo": "dennis.diaz@epn.edu.ec",
       "contrasenia": "$2b$10$6vRZ2jGmzp27gC482fXMJuYiAMyANdRgwzAdRMUBBfBHXqsiAEfV2"
     },
     {
       "id": "c38b2f73-0fe5-4df4-890d-cefc90e07427",
       "nombre": "Mateo Bernal",
-      "nombre de usuario": "admin",
+      "nombre_de_usuario": "admin",
+      "correo": "mateo.bernal@epn.edu.ec",
       "contrasenia": "$2b$10$jpSAtDWayRIkcbHCZd6x5usQHI4l2Aiu4x7suFZ.LsAMDBp6tbyb2"
-    }
-  ],
-  "usuario": [
-    {
-      "id": "1",
-      "nombre": "Juan Pérez Lazo",
-      "contacto": {
-        "telefono": "0987654322",
-        "email": "juan.perez@gmail.com"
-      }
     },
     {
-      "id": "3",
-      "nombre": "Ramiro Torres",
-      "contacto": {
-        "telefono": "0998355261",
-        "email": "ramiro.torres@gmail.com"
-      }
+      "id": "9a0dfe7e-99e3-455f-a7cd-6ef244831fd4",
+      "nombre": "Marco Aurelio",
+      "nombre de usuario": "Marco",
+      "correo": "marco.aurelio@epn.edu.ec",
+      "contrasenia": "$2b$10$GAr0EOJGk9phX5gzvrbt3OVPxoyynFeODHnIoa9CYkG3ak4Owg41G"
     }
   ],
   "generador": [
@@ -75,8 +67,8 @@
   "clientes": [
     {
       "id": "3a96b087-bfdb-4db9-a88a-8926b0120c60",
-      "nombre": "Bugs Bunny",
-      "correo": "bugs.bunny@xd.com",
+      "nombre": "Marco Aurelio",
+      "correo": "marco.aurelio@epn.edu.ec",
       "contrasenia": "$2b$10$G5QfX1dwx.FVKr2KF6zzZ.uqAZ7IgiMRi9xADe4vXXBKED/srN/Ti",
       "fechaCreacion": "2024-12-01T06:36:10.999Z"
     },
@@ -86,13 +78,6 @@
       "correo": "eduardo.porras@epn.edu.ec",
       "contrasenia": "$2b$10$gs3YiKl9NFll4sA7WeD5Q.qbB6f5TNxxjDYd6LQab.v.SlSyVQGly",
       "fechaCreacion": "2024-12-01T06:46:02.006Z"
-    },
-    {
-      "id": "3a949277-04e5-46ed-bb2f-da31ac9381d7",
-      "nombre": "Prueba",
-      "correo": "prueba@epn.edu.ec",
-      "contrasenia": "$2b$10$i1/bLIe5rDNSDV.76Eb5wOBBoCud/S2RAIPMajVZMrrd/6PU924xq",
-      "fechaCreacion": "2024-12-01T07:32:54.049Z"
     }
   ]
 }

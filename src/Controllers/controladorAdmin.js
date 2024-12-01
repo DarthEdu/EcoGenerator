@@ -4,11 +4,13 @@ import bcrypt from 'bcrypt';
 import { json } from "express";
 import { createToken } from "../Middleware/auth.js";
 const ControladorCrearAdmin = async (req, res) => {
-    const { nombre, contrasenia } = req.body
+    const { correo, contrasenia, nombre_de_usuario, nombre } = req.body
     try {
-        const verificar = await Admin.VerificarAdmin(nombre)
-        console.log(verificar)
-        if (verificar) {
+        const verificar = await Admin.VerificarAdmin(nombre_de_usuario, correo)
+        if(!nombre || !correo || !contrasenia || !nombre_de_usuario){
+            res.status(404).json({"msg":"Ingresa el nombre, nombre de usuario, correo y contraseña"})
+        }
+        else if (verificar) {
             res.status(404).json(verificar)
         } else {
             const nivelSal=10;
@@ -16,7 +18,8 @@ const ControladorCrearAdmin = async (req, res) => {
             const nuevoAdmin = {
                 "id": uuidv4(),
                 "nombre": nombre,
-                "nombre de usuario": "admin",
+                "nombre de usuario": nombre_de_usuario,
+                "correo":correo,
                 contrasenia: contraHasheada
             }
             const crearAdmin = await Admin.RegistrarAdmin(nuevoAdmin)
@@ -33,9 +36,12 @@ const ControladorCrearAdmin = async (req, res) => {
 }
 
 const ControladorLoginAdmin = async (req, res) => {
-    const { nombre, contrasenia } = req.body
+    const { nombre_de_usuario, contrasenia } = req.body
     try {
-        const autenticar = await Admin.LoginAdmin(nombre, contrasenia)
+        if(!nombre_de_usuario || !contrasenia){
+            res.status(404).json({"msg":"Ingresa el nombre de usuario y contraseña"})
+        }
+        const autenticar = await Admin.LoginAdmin(nombre_de_usuario, contrasenia)
         const token = createToken(autenticar)
         const mostrar = {
             autenticar,
@@ -68,6 +74,9 @@ const ControladorActualizarClientes = async (req, res) =>{
         ...req.body
     }
     try{
+        if(!nuevosDatos){
+            res.status(404).json({"msg":"Ingresa nuevos datos para actualizar"})
+        }
         const actualizacion = await Admin.ActualizarClientes(id,nuevosDatos)
         res.status(200).json(actualizacion)
     }catch(error){
