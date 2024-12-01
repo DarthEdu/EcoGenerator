@@ -20,7 +20,9 @@
     "express": "^4.21.1",
     "json-server": "^1.0.0-beta.3",
     "jsonwebtoken": "^9.0.2",
-    "morgan": "^1.10.0",
     "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
   }
 }

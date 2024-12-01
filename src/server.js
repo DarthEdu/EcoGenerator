@@ -3,6 +3,7 @@ import express from 'express'
 import morgan from 'morgan'
 import routeAdmin from './Routers/routerAdmin.js'
 import routeGenerador from './Routers/routerGenerador.js'
+import routerCliente from './Routers/routerCliente.js'
 
 // Inicializaciones
 const app = express()
@@ -26,6 +27,9 @@ app.use('/ecoGenerator', routeAdmin)
 
 // ruta generador
 app.use('/ecoGenerator', routeGenerador)
+
+// ruta cliente
+app.use('/ecoGenerator',routerCliente)
 
 // Exportar la instancia de express por medio de app
 export default  app

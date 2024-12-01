@@ -41,5 +41,34 @@
       "ubicacion": "Bodega Guayaquil",
       "id": "1"
     }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Martin",
+      "correo": "martin.ayala@epn.edu.ec",
+      "contrasenia": "Hola123"
+    },
+    {
+      "id": "3a96b087-bfdb-4db9-a88a-8926b0120c60",
+      "nombre": "Bugs Bunny",
+      "correo": "bugs.bunny@xd.com",
+      "contrasenia": "$2b$10$G5QfX1dwx.FVKr2KF6zzZ.uqAZ7IgiMRi9xADe4vXXBKED/srN/Ti",
+      "fechaCreacion": "2024-12-01T06:36:10.999Z"
+    },
+    {
+      "id": "aa083ab4-7996-4bfa-9acb-d40d5b5c5af3",
+      "nombre": "Eduardo Porras",
+      "correo": "eduardo.porras@epn.edu.ec",
+      "contrasenia": "$2b$10$gs3YiKl9NFll4sA7WeD5Q.qbB6f5TNxxjDYd6LQab.v.SlSyVQGly",
+      "fechaCreacion": "2024-12-01T06:46:02.006Z"
+    },
+    {
+      "id": "3a949277-04e5-46ed-bb2f-da31ac9381d7",
+      "nombre": "Prueba",
+      "correo": "prueba@epn.edu.ec",
+      "contrasenia": "$2b$10$i1/bLIe5rDNSDV.76Eb5wOBBoCud/S2RAIPMajVZMrrd/6PU924xq",
+      "fechaCreacion": "2024-12-01T07:32:54.049Z"
+    }
   ]
 }
