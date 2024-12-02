@@ -8,13 +8,6 @@
       "contrasenia": "jj012"
     },
     {
-      "id": "d6b59097-23f5-429f-a945-8aae4e71d806",
-      "nombre": "Dennis Díaz",
-      "nombre_de_usuario": "admin",
-      "correo": "dennis.diaz@epn.edu.ec",
-      "contrasenia": "$2b$10$6vRZ2jGmzp27gC482fXMJuYiAMyANdRgwzAdRMUBBfBHXqsiAEfV2"
-    },
-    {
       "id": "c38b2f73-0fe5-4df4-890d-cefc90e07427",
       "nombre": "Mateo Bernal",
       "nombre_de_usuario": "admin",
@@ -27,6 +20,13 @@
       "nombre de usuario": "Marco",
       "correo": "marco.aurelio@epn.edu.ec",
       "contrasenia": "$2b$10$GAr0EOJGk9phX5gzvrbt3OVPxoyynFeODHnIoa9CYkG3ak4Owg41G"
+    },
+    {
+      "id": "382fee07-22a0-4cca-b6e9-1aebb2eff8bb",
+      "nombre": "Dennis Díaz",
+      "nombre de usuario": "Dennis",
+      "correo": "dennis.diaz@epn.edu.ec",
+      "contrasenia": "$2b$10$RhyfgzO2s8gs6LK8Bbe2k.xwIhyOAq5HBJkWEN7jNVBjfcU56czL6"
     }
   ],
   "generador": [
