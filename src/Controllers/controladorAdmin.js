@@ -18,7 +18,7 @@ const ControladorCrearAdmin = async (req, res) => {
             const nuevoAdmin = {
                 "id": uuidv4(),
                 "nombre": nombre,
-                "nombre de usuario": nombre_de_usuario,
+                "nombre_de_usuario": nombre_de_usuario,
                 "correo":correo,
                 contrasenia: contraHasheada
             }

@@ -17,14 +17,14 @@
     {
       "id": "9a0dfe7e-99e3-455f-a7cd-6ef244831fd4",
       "nombre": "Marco Aurelio",
-      "nombre de usuario": "Marco",
+      "nombre_de_usuario": "Marco",
       "correo": "marco.aurelio@epn.edu.ec",
       "contrasenia": "$2b$10$GAr0EOJGk9phX5gzvrbt3OVPxoyynFeODHnIoa9CYkG3ak4Owg41G"
     },
     {
       "id": "382fee07-22a0-4cca-b6e9-1aebb2eff8bb",
       "nombre": "Dennis Díaz",
-      "nombre de usuario": "Dennis",
+      "nombre_de_usuario": "Dennis",
       "correo": "dennis.diaz@epn.edu.ec",
       "contrasenia": "$2b$10$RhyfgzO2s8gs6LK8Bbe2k.xwIhyOAq5HBJkWEN7jNVBjfcU56czL6"
     }
@@ -65,13 +65,6 @@
     }
   ],
   "clientes": [
-    {
-      "id": "3a96b087-bfdb-4db9-a88a-8926b0120c60",
-      "nombre": "Marco Aurelio",
-      "correo": "marco.aurelio@epn.edu.ec",
-      "contrasenia": "$2b$10$G5QfX1dwx.FVKr2KF6zzZ.uqAZ7IgiMRi9xADe4vXXBKED/srN/Ti",
-      "fechaCreacion": "2024-12-01T06:36:10.999Z"
-    },
     {
       "id": "aa083ab4-7996-4bfa-9acb-d40d5b5c5af3",
       "nombre": "Eduardo Porras",

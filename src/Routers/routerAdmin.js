@@ -12,7 +12,7 @@ route.post('/administrador/registro', ControladorCrearAdmin)
 route.post('/administrador/login', ControladorLoginAdmin)
 
 //privadas
-route.get('/administrador/clientes',VerifyToken ,ControladorObtenerClientes)
-route.put('/administrador/clientes/actualizar/:id', VerifyToken,ControladorActualizarClientes)
-route.delete('/administrador/clientes/eliminar/:id',VerifyToken ,ControladorEliminarClientes)
+route.get('/clientes',VerifyToken ,ControladorObtenerClientes)
+route.put('/clientes/actualizar/:id', VerifyToken,ControladorActualizarClientes)
+route.delete('/clientes/eliminar/:id',VerifyToken ,ControladorEliminarClientes)
 export default route
