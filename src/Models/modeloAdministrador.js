@@ -20,7 +20,7 @@ const Admin = {
             return { "msg": "Error en obtener los recursos" }
         } else {
             const respuesta = await objeto.json()
-            const user = respuesta.find(pin => pin.nombre === username)
+            const user = respuesta.find(pin => pin.nombre_de_usuario === username)
             if (!user) {
                 console.log("Usuario no encontrado")
                 return { "msg": "Usuario no encontrado" }
