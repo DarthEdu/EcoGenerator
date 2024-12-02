@@ -12,7 +12,7 @@ const controladorRegisClientes = async (req, res) => {
         if (!nombre || !correo || !contrasenia) {
             return res.status(400).json({ "msg": "Ingrese el nombre, correo y contraseña" });
         } else if (verificar) {
-            res.status(404).json(verificar)
+            return res.status(404).json(verificar)
         } else {
             const nivelSal = 10;
             const contraHasheada = await bcrypt.hash(contrasenia, nivelSal)
@@ -27,11 +27,11 @@ const controladorRegisClientes = async (req, res) => {
             if (!crearCliente) {
                 return res.status(400).json({ msg: "Error al registrar el cliente" });
             } else {
-                res.status(201).json({ msg: "Cliente creado con éxito", cliente: crearCliente });
+                return res.status(201).json({ msg: "Cliente creado con éxito", cliente: crearCliente });
             }
         }
     } catch (error) {
-        res.status(500).json({ msg: "Error de conexión", error: error.message });
+        return res.status(500).json({ msg: "Error de conexión", error: error.message });
     }
 }
 const controladorLoginClientes = async (req,res)=>{
@@ -42,13 +42,13 @@ const controladorLoginClientes = async (req,res)=>{
             autenticar
         }
         if (!autenticar) {
-            res.send("Credenciales no ingresadas").status(404)
+            return res.send("Credenciales no ingresadas").status(404)
             console.log("Ingresar credenciales")
         } else {
-            res.status(200).json(mostrar)
+            return res.status(200).json(mostrar)
         }
     } catch (error) {
-        res.status(500).json({ "msg": "ERROR de conexión" })
+        return res.status(500).json({ "msg": "ERROR de conexión" })
     }
 }
 export{controladorRegisClientes,controladorLoginClientes}
