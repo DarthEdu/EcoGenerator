@@ -59,14 +59,4 @@ const controladorVerGeneradores = async(req, res)=>{
         res.status(500).json({"msg":"Error de conexion"}) 
     }
 }
-const controladorVerGeneradorId = async (req,res)=>{
-    const {id} = req.params
-    try {
-        const generador = await modeloClientes.verGeneradorId(id)
-        const status = generador.error ? 404 : 200
-        res.status(status).json(generador)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
 export{controladorRegisClientes,controladorLoginClientes,controladorVerGeneradores,controladorVerGeneradorId}
