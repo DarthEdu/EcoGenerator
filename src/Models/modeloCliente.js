@@ -56,6 +56,14 @@ const modeloClientes = {
         }else{
             return {"msg":"No existen Generadores"} 
         }
+    },
+    async verGeneradorId(id){
+        const response = await fetch(`http://localhost:4000/generador/${id}`);
+        if (!response.ok){
+            return { error: "Generador no encontrado" };
+        }
+        const data = await response.json();
+        return data
     }
 
 }

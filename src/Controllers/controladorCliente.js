@@ -1,7 +1,7 @@
 import modeloClientes from "../Models/modeloCliente.js";
 import { v4 as uuidv4 } from "uuid";
 import bcrypt from 'bcrypt';
-import { json } from "express";
+import e, { json } from "express";
 
 
 const controladorRegisClientes = async (req, res) => {
@@ -59,4 +59,14 @@ const controladorVerGeneradores = async(req, res)=>{
         res.status(500).json({"msg":"Error de conexion"}) 
     }
 }
-export{controladorRegisClientes,controladorLoginClientes,controladorVerGeneradores}
+const controladorVerGeneradorId = async (req,res)=>{
+    const {id} = req.params
+    try {
+        const generador = await modeloClientes.verGeneradorId(id)
+        const status = generador.error ? 404 : 200
+        res.status(status).json(generador)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+export{controladorRegisClientes,controladorLoginClientes,controladorVerGeneradores,controladorVerGeneradorId}
