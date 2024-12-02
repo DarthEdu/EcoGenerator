@@ -16,7 +16,7 @@ const modeloClientes = {
     },
     async loginCliente(email,password){
         const peticion = await fetch('http://localhost:4000/clientes')
-        if(!peticion){
+        if(!peticion.ok){
             return {"msg":"Error en obtener los recursos"}
         }else{
             const respuesta = await peticion.json()
@@ -52,7 +52,7 @@ const modeloClientes = {
         const respuesta = await datos.json()
         console.log(respuesta)
         if(respuesta){
-            return respuesta // La respuesta da en terminas 
+            return respuesta 
         }else{
             return {"msg":"No existen Generadores"} 
         }

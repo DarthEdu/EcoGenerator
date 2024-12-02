@@ -78,6 +78,20 @@
       "correo": "eduardo.porras@epn.edu.ec",
       "contrasenia": "$2b$10$gs3YiKl9NFll4sA7WeD5Q.qbB6f5TNxxjDYd6LQab.v.SlSyVQGly",
       "fechaCreacion": "2024-12-01T06:46:02.006Z"
+    },
+    {
+      "id": "ac07d38e-0b42-405c-b294-1d355688bcca",
+      "nombre": "Bruce Wayne",
+      "correo": "batman@hotmail.com",
+      "contrasenia": "$2b$10$hlwylY0ebQiXhYqLqTjC4uX56Gh7lq1VgOs4NO0Of00jN6RkqyoG6",
+      "fechaCreacion": "2024-12-01T22:57:07.955Z"
+    },
+    {
+      "id": "abae23e5-f20e-459b-8609-7bc0c3add462",
+      "nombre": "CJ",
+      "correo": "CJ@hotmail.com",
+      "contrasenia": "$2b$10$xVy2QMU644.PTdVRd3xLlugfHtUkdw7hzF7BSO62xbn8YpN9ldhB2",
+      "fechaCreacion": "2024-12-01T23:49:52.169Z"
     }
   ]
 }

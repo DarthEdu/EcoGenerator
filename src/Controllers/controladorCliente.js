@@ -9,8 +9,10 @@ const controladorRegisClientes = async (req, res) => {
     try {
         const verificar = await modeloClientes.verificarClientes(correo)
         console.log(verificar);
-        if (verificar) {
-            return res.status(400).json({ msg: "El cliente ya existe" });
+        if (!nombre || !correo || !contrasenia) {
+            return res.status(400).json({ "msg": "Ingrese el nombre, correo y contraseña" });
+        } else if (verificar) {
+            res.status(404).json(verificar)
         } else {
             const nivelSal = 10;
             const contraHasheada = await bcrypt.hash(contrasenia, nivelSal)
@@ -52,9 +54,9 @@ const controladorLoginClientes = async (req,res)=>{
 const controladorVerGeneradores = async(req, res)=>{
     try {
         const generador = await modeloClientes.verGeneradores()
-        res.status(200),json(generador)
+        res.status(200).json(generador)
     } catch (error) {
         res.status(500).json({"msg":"Error de conexion"}) 
-    } // revisar
+    }
 }
 export{controladorRegisClientes,controladorLoginClientes,controladorVerGeneradores}
