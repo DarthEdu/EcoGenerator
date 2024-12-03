@@ -1,8 +1,12 @@
 import bcrypt from "bcrypt";
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 
 const ModeloGenerador = {
   async createGeneradorModel(datos) {
-    const respuesta = await fetch("http://localhost:4000/generador", {
+    const respuesta = await fetch(process.env.BDD_GENERADORES, {
       method: "POST",
       body: JSON.stringify(datos),
       headers: { "Content-Type": "application/json" },
@@ -16,13 +20,13 @@ const ModeloGenerador = {
   },
 
   async getAllGeneradoresModel() {
-    const peticion = await fetch("http://localhost:4000/generador");
+    const peticion = await fetch(process.env.BDD_GENERADORES);
     const generadores = await peticion.json();
     return generadores;
   },
 
   async getGeneradorByIdModel(Id) {
-    const response = await fetch(`http://localhost:4000/generador/${Id}`);
+    const response = await fetch(`${process.env.BDD_GENERADORES}/${Id}`);
     if (!response.ok) {
       return { error: "Generador no encontrado" };
     }
@@ -31,7 +35,7 @@ const ModeloGenerador = {
   },
 
   async updateGeneradorModel(Id, updateModel) {
-    const url = `http://localhost:4000/generador/${Id}`;
+    const url = `${process.env.BDD_GENERADORES}/${Id}`;
     const peticion = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(updateModel),
@@ -42,7 +46,7 @@ const ModeloGenerador = {
   },
 
   async deleteGeneradorModel(tourId) {
-    const url = `http://localhost:4000/generador/${tourId}`;
+    const url = `${process.env.BDD_GENERADORES}/${tourId}`;
     const peticion = await fetch(url, {
       method: "DELETE",
     });

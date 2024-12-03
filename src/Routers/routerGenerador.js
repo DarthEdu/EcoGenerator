@@ -7,11 +7,11 @@ const router=Router()
 
 // rutas publicas
 router.get('/generador', getAllGeneradoresController)
-router.get('/generador/q=:id', getAllGeneradorControllerByID)
+router.get('/generador/:id', getAllGeneradorControllerByID)
 
 // rutas privadas
-router.delete('/generador/q=:id',VerifyToken,deleteGeneradorController)
-router.put('/generador/q=:id',VerifyToken,updateGeneradorController)
+router.delete('/generador/:id',VerifyToken,deleteGeneradorController)
+router.put('/generador/:id',VerifyToken,updateGeneradorController)
 router.post('/generador',VerifyToken,createGeneradorController)
 
 export default router
