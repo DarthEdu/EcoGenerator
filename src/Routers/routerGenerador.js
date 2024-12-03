@@ -5,11 +5,12 @@ import { createGeneradorController, deleteGeneradorController, getAllGeneradorCo
 
 const router=Router()
 
-// rutas publicas
+
+// Rutas publicas
 router.get('/generador', getAllGeneradoresController)
 router.get('/generador/:id', getAllGeneradorControllerByID)
 
-// rutas privadas
+// Rutas privadas
 router.delete('/generador/:id',VerifyToken,deleteGeneradorController)
 router.put('/generador/:id',VerifyToken,updateGeneradorController)
 router.post('/generador',VerifyToken,createGeneradorController)
