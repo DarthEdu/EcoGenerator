@@ -44,7 +44,8 @@ const createGeneradorController = async (req,res) => {
 const deleteGeneradorController = async (req,res) => { 
     const {id} = req.params
     try {
-        await ModeloGenerador.deleteGeneradorModel(id)
+        const pruebas = ModeloGenerador.deleteGeneradorModel(id)
+        console.log(pruebas)
         res.status(200).json({msg:"Generador eliminado con exito"})
     } catch (error) {
         res.status(500).json(error)

@@ -1,8 +1,9 @@
 import bcrypt from 'bcrypt';
+import 'dotenv/config'
 
 const Admin = {
     async RegistrarAdmin(datos) {
-        const respuesta = await fetch("http://localhost:4000/administrador", {
+        const respuesta = await fetch(process.env.BDD_ADMINISTRADORES, {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: { 'Content-Type': 'application/json' }
@@ -15,7 +16,7 @@ const Admin = {
         return resultado
     },
     async LoginAdmin(username, password) {
-        const objeto = await fetch('http://localhost:4000/administrador')
+        const objeto = await fetch(process.env.BDD_ADMINISTRADORES)
         if (!objeto.ok) {
             return { "msg": "Error en obtener los recursos" }
         } else {
@@ -38,7 +39,7 @@ const Admin = {
         if (!correo || typeof correo !== "string" || !nom_Usuario || typeof nom_Usuario!=="string") {
             return { "msg": "Ingresa los datos correctamente" }
         } else {
-            const conec = await fetch("http://localhost:4000/administrador")
+            const conec = await fetch(process.env.BDD_ADMINISTRADORES)
             const respuesta = await conec.json()
             const verificacion = respuesta.find(mail => mail.correo === correo)
             const verificacionUsername= respuesta.find(nom => nom.nombre_de_usuario === nom_Usuario)
@@ -52,7 +53,7 @@ const Admin = {
         }
     },
     async ListarClientes(){
-        const datos = await fetch("http://localhost:4000/clientes")
+        const datos = await fetch(process.env.BDD_CLIENTES)
         const respuesta = await datos.json()
         if(!respuesta){
             return {"msg":"No existen datos"}
@@ -61,7 +62,7 @@ const Admin = {
         }
     },
     async ActualizarClientes(id, nuevaInfo){
-        const url = "http://localhost:4000/clientes"
+        const url = process.env.BDD_CLIENTES
         const conec=await fetch(url)
         const resultado = await conec.json()
         if(!resultado){
@@ -79,7 +80,7 @@ const Admin = {
             contrasenia: contraFinal
         }
 
-        const datos = await fetch(`http://localhost:4000/clientes/${id}`, {
+        const datos = await fetch(`${process.env.BDD_CLIENTES}/${id}`, {
             method:'PUT',
             body: JSON.stringify(usuarioFinal),
             headers:{ 'Content-Type': 'application/json' }
@@ -92,7 +93,7 @@ const Admin = {
         }
     },
     async EliminarClientes(id){
-        const datos = await fetch(`http://localhost:4000/clientes/${id}`,{
+        const datos = await fetch(`${process.env.BDD_CLIENTES}/${id}`,{
             method: 'DELETE',
         })
         const respuesta = await datos.json()

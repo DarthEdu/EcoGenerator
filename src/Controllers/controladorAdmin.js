@@ -95,7 +95,7 @@ const ControladorActualizarClientes = async (req, res) => {
 const ControladorEliminarClientes = async (req, res) => {
     const { id } = req.params
     try {
-        Admin.EliminarClientes(id)
+        await Admin.EliminarClientes(id)
         return res.status(200).json({ "msg": "Eliminado correctamente" })
     } catch (error) {
         return res.status(500).json({ "msg": "ERROR de conexión" })

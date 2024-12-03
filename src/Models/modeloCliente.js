@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 
 const modeloClientes = {
     async registrarCliente(datos){
-        const respuesta = await fetch("http://localhost:4000/clientes",{
+        const respuesta = await fetch(process.env.BDD_CLIENTES,{
             method: 'POST',
             body: JSON.stringify(datos),
             headers:{'Content-Type':'application/json'}
@@ -15,7 +15,7 @@ const modeloClientes = {
         return data
     },
     async loginCliente(email,password){
-        const peticion = await fetch('http://localhost:4000/clientes')
+        const peticion = await fetch(process.env.BDD_CLIENTES)
         if(!peticion.ok){
             return {"msg":"Error en obtener los recursos"}
         }else{
@@ -37,7 +37,7 @@ const modeloClientes = {
         if (!correo || typeof correo !== "string") {
             return { "msg": "Ingresa el correo correctamente" }
         } else {
-            const conec = await fetch("http://localhost:4000/clientes")
+            const conec = await fetch(process.env.BDD_CLIENTES)
             const respuesta = await conec.json()
             const verificacion = respuesta.find(email => email.correo === correo)
             if (verificacion) {
